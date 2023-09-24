@@ -1,3 +1,4 @@
+// First Test Case
 describe('Verify if the "High Schools" tab displays intended results', () => {
   beforeEach(() => {
     // Visits the actual home page of Hudl
