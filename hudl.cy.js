@@ -1,4 +1,3 @@
-/*
 // First Test Case
 describe('Verify if the "High Schools" tab displays intended results', () => {
   beforeEach(() => {
@@ -155,7 +154,7 @@ describe('Verify if the pro suite "Football" tab works as intended.', () => {
   
 })
 
-*/
+
 
 describe('Verify if "Hudl Fan" in Privacy Policy in Terms and Conditions when clicked returns to full description.', () => {
   beforeEach(() => {
@@ -182,6 +181,30 @@ describe('Verify if "Hudl Fan" in Privacy Policy in Terms and Conditions when cl
     cy.get('[href="/terms"]').click()
     cy.get(':nth-child(3) > .font-bold').click()
     cy.get('[href="#four"]').click()
+  })
+  
+})
+
+
+
+describe('Verify if "Volleyball" tab works when clicking ""the worlds top organizations." link.', () => {
+  beforeEach(() => {
+    cy.visit('https://www.hudl.com/');
+
+  });
+  it('Navigate to the hudl home page.', () => 
+  {
+  })
+  
+  it('Scroll down and click on the "the worlds top organization." link.', () => 
+  {
+    cy.get('#homepage-product-overview_pro-solutions').click()
+  })
+
+  it('Scroll down again and then click on the "Volleyball" tab.', () => 
+  {
+    cy.get('#homepage-product-overview_pro-solutions').click()
+    cy.get('#prosuite_sport_menu_volleyball').click()
   })
   
 })
