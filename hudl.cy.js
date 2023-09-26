@@ -18,8 +18,8 @@ describe('Verify if the "High Schools" tab displays intended results', () => {
 
 describe('Verify if the club and sports link in the "Solutions" tab displays "Get in Touch" Button', () => {
   beforeEach(() => {
+
     // Visits the actual home page of Hudl
-    //homePage.visitHomePage();
     cy.visit('https://www.hudl.com/');
 
   });
@@ -40,8 +40,8 @@ describe('Verify if the club and sports link in the "Solutions" tab displays "Ge
 
 describe('Verify if user can search "Lyons Township High School in search bar in "Search Teams & Athletes" Button', () => {
   beforeEach(() => {
+    
     // Visits the actual home page of Hudl
-    //homePage.visitHomePage();
     cy.visit('https://www.hudl.com/');
 
   });
@@ -106,3 +106,51 @@ describe('Verify if the "Hudl Assist" walkthrough video works as intended', () =
   })
 
 })
+
+
+describe('Verify if the sideline release notes pop up', () => {
+  beforeEach(() => {
+    // Visits the actual home page of Hudl
+    //homePage.visitHomePage();
+    cy.visit('https://www.hudl.com/');
+
+  });
+  it('Navigate to the hudl home page.', () => 
+  {
+  })
+  
+  it('Scroll down to the bottom of the page and click "Release Notes".', () => 
+  {
+    cy.get(':nth-child(18) > .footer-link').click()
+  })
+
+  it('Click on "Hudl Sideline".', () => 
+  {
+    cy.get(':nth-child(18) > .footer-link').click()
+    cy.get('#sideline-tab').click()
+    cy.get('#sideline-oct-29')
+  })
+})
+
+describe('Verify if the pro suite "Football" tab works as intended.', () => {
+  beforeEach(() => {
+    cy.visit('https://www.hudl.com/');
+
+  });
+  it('Navigate to the hudl home page.', () => 
+  {
+  })
+  
+  it('Click on the "Read more" link from the Roberto Martinez comment on the bottom of the page.', () => 
+  {
+    cy.get('#homepage_testimonial_1').click()
+  })
+
+  it('Go to the top of the bag and click the "Football" tab.', () => 
+  {
+    cy.get('#homepage_testimonial_1').click()
+    cy.get('.breadcrumbs > [href="/blog/elite/global-football"]').click()
+  })
+  
+})
+
