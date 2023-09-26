@@ -1,3 +1,4 @@
+/*
 // First Test Case
 describe('Verify if the "High Schools" tab displays intended results', () => {
   beforeEach(() => {
@@ -154,3 +155,33 @@ describe('Verify if the pro suite "Football" tab works as intended.', () => {
   
 })
 
+*/
+
+describe('Verify if "Hudl Fan" in Privacy Policy in Terms and Conditions when clicked returns to full description.', () => {
+  beforeEach(() => {
+    cy.visit('https://www.hudl.com/');
+
+  });
+  it('Navigate to the hudl home page.', () => 
+  {
+  })
+  
+  it('Click on the "Terms & Conditions" link at the bottom of the page.', () => 
+  {
+    cy.get('[href="/terms"]').click()
+  })
+
+  it('Then click on "Hudls Privacy Policy" link.', () => 
+  {
+    cy.get('[href="/terms"]').click()
+    cy.get(':nth-child(3) > .font-bold').click()
+  })
+
+  it('Click on the "4. Hudl Fan" link.', () => 
+  {
+    cy.get('[href="/terms"]').click()
+    cy.get(':nth-child(3) > .font-bold').click()
+    cy.get('[href="#four"]').click()
+  })
+  
+})
