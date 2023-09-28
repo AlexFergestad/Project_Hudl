@@ -16,6 +16,7 @@ describe('Verify if the "High Schools" tab displays intended results', () => {
   })
 })
 
+// Second Test Case
 describe('Verify if the club and sports link in the "Solutions" tab displays "Get in Touch" Button', () => {
   beforeEach(() => {
 
@@ -37,7 +38,7 @@ describe('Verify if the club and sports link in the "Solutions" tab displays "Ge
 
 })
 
-
+// Third Test Case
 describe('Verify if user can search "Lyons Township High School in search bar in "Search Teams & Athletes" Button', () => {
   beforeEach(() => {
     
@@ -70,10 +71,10 @@ describe('Verify if user can search "Lyons Township High School in search bar in
 
 })
 
+// Fourth Test Case
 describe('Verify if the "Hudl Assist" walkthrough video works as intended', () => {
   beforeEach(() => {
 
-    // Visits the actual home page of Hudl
     cy.visit('https://www.hudl.com/');
 
   });
@@ -107,11 +108,10 @@ describe('Verify if the "Hudl Assist" walkthrough video works as intended', () =
 
 })
 
-
+// Fifth Test Case
 describe('Verify if the sideline release notes pop up', () => {
   beforeEach(() => {
     // Visits the actual home page of Hudl
-    //homePage.visitHomePage();
     cy.visit('https://www.hudl.com/');
 
   });
@@ -132,6 +132,7 @@ describe('Verify if the sideline release notes pop up', () => {
   })
 })
 
+// Sixth Test Case
 describe('Verify if the pro suite "Football" tab works as intended.', () => {
   beforeEach(() => {
     cy.visit('https://www.hudl.com/');
@@ -155,7 +156,7 @@ describe('Verify if the pro suite "Football" tab works as intended.', () => {
 })
 
 
-
+// Seventh Test Case
 describe('Verify if "Hudl Fan" in Privacy Policy in Terms and Conditions when clicked returns to full description.', () => {
   beforeEach(() => {
     cy.visit('https://www.hudl.com/');
@@ -186,7 +187,7 @@ describe('Verify if "Hudl Fan" in Privacy Policy in Terms and Conditions when cl
 })
 
 
-
+// Eighth Test Case
 describe('Verify if "Volleyball" tab works when clicking ""the worlds top organizations." link.', () => {
   beforeEach(() => {
     cy.visit('https://www.hudl.com/');
@@ -207,4 +208,68 @@ describe('Verify if "Volleyball" tab works when clicking ""the worlds top organi
     cy.get('#prosuite_sport_menu_volleyball').click()
   })
   
+})
+
+// Ninth Test Case
+describe('Verify if user can type in First Name, Last Name, email, and phone number into Hudl SportsCode Personal Information', () => {
+  beforeEach(() => {
+    cy.visit('https://www.hudl.com/');
+
+  });
+
+  it('Navigate to the hudl home page.', () => 
+  {
+  })
+
+  it('Scroll down and click on "Sportscode"', () => 
+  {
+    cy.get('#homepage_product-icon_sportscode > .w-10').click()
+  })
+  
+  it('Scroll down and then type in "Alex" in the First Name, "Fergestad" for the Last Name, "ajfergestad@comcast.net" for the email, and "9999999999" for the Phone Number', () => 
+  {
+    cy.get('#homepage_product-icon_sportscode > .w-10').click()
+    cy.get('#FirstName').type("Alex")
+    cy.get('#LastName').type("Fergestad")
+    cy.get('#Email').type("ajfergestad@comcast.net")
+    cy.get('#Phone').type("9999999999")
+  })
+
+})
+
+// Tenth Test Case
+describe('Verify if login functionality is valid.', () => {
+  beforeEach(() => {
+    cy.visit('https://www.hudl.com/');
+
+  });
+
+  it('Navigate to the hudl home page.', () => 
+  {
+  })
+
+  it('Click on the login bar on the top right and click on the hudl Icon.', () => 
+  {
+    cy.get('.mainnav__actions > .mainnav__container > .mainnav__item').click()
+    cy.get('.mainnav__actions > .mainnav__container > .mainnav__sub > .subnav__inner > :nth-child(1) > .subnav__items > .subnav__item').click()
+  })
+  
+  it('Enter in "ajfergestad@comcast.net" for the email and "Amber0127$" for the password.', () => 
+  {
+    cy.get('.mainnav__actions > .mainnav__container > .mainnav__item').click()
+    cy.get('.mainnav__actions > .mainnav__container > .mainnav__sub > .subnav__inner > :nth-child(1) > .subnav__items > .subnav__item').click()
+    cy.get('#email').type("ajfergestad@comcast.net")
+    cy.get('#password').type("Amber0127$")
+  })
+
+  it('Then select the "continue" button.', () => 
+  {
+    cy.get('.mainnav__actions > .mainnav__container > .mainnav__item').click()
+    cy.get('.mainnav__actions > .mainnav__container > .mainnav__sub > .subnav__inner > :nth-child(1) > .subnav__items > .subnav__item').click()
+    cy.get('#email').type("ajfergestad@comcast.net")
+    cy.get('#password').type("Amber0127$")
+    cy.get('#logIn').click()
+
+  })
+
 })
